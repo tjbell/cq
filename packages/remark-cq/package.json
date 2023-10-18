@@ -1,0 +1,63 @@
+{
+  "name": "@fullstackio/remark-cq",
+  "version": "7.0.0",
+  "description": "Import code into markdown with cq",
+  "license": "MIT",
+  "keywords": [
+    "leanpub",
+    "remark"
+  ],
+  "dependencies": {
+    "@fullstackio/cq": "^7.0.0",
+    "isomorphic-fetch": "^2.2.1",
+    "lodash": "^4.17.11",
+    "trim-trailing-lines": "^1.1.1",
+    "unist-util-visit": "^1.0.0",
+    "uuid": "^3.3.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fullstackio/cq.git"
+  },
+  "author": "Nate Murray <nate@fullstack.io>",
+  "files": [
+    "index.js"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "dedent": "^0.7.0",
+    "eslint": "^2.0.0",
+    "esmangle": "^1.0.0",
+    "istanbul": "^0.4.0",
+    "jscs": "^2.0.0",
+    "jscs-jsdoc": "^1.0.0",
+    "rehype-stringify": "^5.0.0",
+    "remark": "^5.0.1",
+    "remark-comment-config": "^3.0.0",
+    "remark-github": "^4.0.1",
+    "remark-lint": "^2.0.0",
+    "remark-parse": "^6.0.3",
+    "remark-rehype": "^4.0.0",
+    "remark-slug": "^4.0.0",
+    "remark-stringify": "^6.0.4",
+    "remark-usage": "^2.0.0",
+    "remark-validate-links": "^2.0.0",
+    "tape": "^4.0.0",
+    "unified": "^7.0.2"
+  },
+  "scripts": {
+    "build-bundle": "browserify index.js --no-builtins -s remarkInlineLinks > remark-inline-links.js",
+    "build-mangle": "esmangle remark-inline-links.js > remark-inline-links.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "lint-api": "eslint .",
+    "lint-style": "jscs --reporter inline .",
+    "lint": "npm run lint-api && npm run lint-style",
+    "test-api": "node test.js",
+    "test-coverage": "istanbul cover test.js",
+    "test": "npm run build && npm run lint && npm run test-coverage"
+  },
+  "gitHead": "6198d17961ceab17dcc15f1017c21e84b0808277"
+}

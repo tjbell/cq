@@ -1,0 +1,48 @@
+{
+  "name": "@fullstackio/cqmd",
+  "version": "7.0.0",
+  "description": "markdown pre-processor for cq",
+  "main": "src/index.js",
+  "repository": "https://github.com/fullstackio/cq/tree/master/packages/cqmd",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --compilers js:babel-core/register",
+    "watchtest": "./node_modules/.bin/mocha --compilers js:babel-core/register --watch"
+  },
+  "bin": {
+    "cqmd": "src/cli.js"
+  },
+  "author": "Nate Murray <nate@fullstack.io>",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@fullstackio/cq": "^7.0.0",
+    "@fullstackio/remark-adjust-paths": "^7.0.0",
+    "@fullstackio/remark-cq": "^7.0.0",
+    "@fullstackio/remark-leanpub": "^7.0.0",
+    "fs-extra": "^7.0.1",
+    "rehype-stringify": "^5.0.0",
+    "relative": "^3.0.2",
+    "remark": "^5.0.1",
+    "remark-frontmatter": "^1.3.1",
+    "remark-lint": "^2.0.0",
+    "remark-parse": "^6.0.3",
+    "remark-rehype": "^4.0.0",
+    "remark-slug": "^4.0.0",
+    "remark-stringify": "^6.0.4",
+    "remark-yaml-config": "^4.0.3",
+    "string-replace-async": "^1.2.0",
+    "unified": "^7.0.2",
+    "yargs": "^4.7.1"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
+    "pegjs": "^0.9.0"
+  },
+  "gitHead": "6198d17961ceab17dcc15f1017c21e84b0808277",
+  "optionalDependencies": {
+    "chokidar": "^2.0.4"
+  }
+}
